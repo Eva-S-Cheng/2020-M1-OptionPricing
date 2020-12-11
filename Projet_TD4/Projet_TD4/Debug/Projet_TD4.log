@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: Le répertoire intermédiaire (Debug\) contient des fichiers partagés provenant d'un autre projet (Projet_TD4.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
+  CoxRossRubinsteinEuropeanOption.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(11,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(124,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(132,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(190,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(194,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(245,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(262,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(267,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(268,24): warning C4018: '<' : incompatibilité signed/unsigned
+  Projet_TD4.vcxproj -> C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Debug\Projet_cpp.exe
