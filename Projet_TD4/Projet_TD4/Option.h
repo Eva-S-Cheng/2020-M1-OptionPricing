@@ -1,6 +1,8 @@
 #pragma once
 class Option
 {
+protected:
+	/* THE BASIC ATTRIBUTES OR THE OPTIONS */
 	int _time;
 	int _n;
 	double _deltaTime = 0.0;
@@ -14,7 +16,7 @@ class Option
 	double _underlyingPrice = 0.0;
 	double _optionPrice;
 
-
+	/* COMPUTERS IN PRIVATE */
 	void computeU();
 	void computeD();
 	void computeP();
@@ -23,24 +25,31 @@ class Option
 	void computePrice();
 
 public:
+	/* CONSTRUCTOR */
 	Option();
 	Option(double, int, double, double, double, double);
 	~Option();
+	/* ABSTRACT METHOD SINCE THE PAYOFF DEPENDS IN THE TYPE */
 	virtual double payOff(int) = 0;
 	
+	/* GETTERS */
 	double getU();
 	double getD();
 	double getP();
 	double getQ();
 	double getDeltaTime();
 	double getOptionPrice();
+	double getStrike();
+
+	/* CLASSICAL FUNCTIONS */
 	double power(double, int);
 	int factorial(int);
 	double max(double, double);
 	double S_Ni(int);
-	double getStrike();
+	
 };
 
+/* DERIVATED CLASSES */
 class EuropeanPUT : public Option {
 public:
 	EuropeanPUT();

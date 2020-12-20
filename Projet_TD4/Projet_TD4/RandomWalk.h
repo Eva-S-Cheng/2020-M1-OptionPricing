@@ -10,11 +10,11 @@ enum Distribution { uniform, gamma, weibull, extreme_val, norm, lognorm, boxmull
 class RandomWalk
 {
 private :
-	int _size;						// This represents the number of steps
-	std::vector<double> _values;	// Contains the value of each walk	
+	int _size;							// This represents the number of steps
+	std::vector<double> _values;		// Contains the value of each walk	
 	Distribution _distribution;
-	// typeOfDistribution _dist;	// Contain the type of distribution
-	double _mean;					// We don't want to compute it every time	
+	// typeOfDistribution _dist;		// Contain the type of distribution
+	double _mean;						// We don't want to compute it every time	
 
 	double computeMean() const;
 

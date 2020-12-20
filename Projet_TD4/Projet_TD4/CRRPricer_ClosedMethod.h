@@ -20,6 +20,7 @@ protected:
 	double _optionPrice = 0.0;
 	optionName _optionType;
 
+	/* COMPUTERS IN PRIVATE TO AVOID BAD UTILISATION OF THE PROGRAM */
 	void computeU();
 	void computeD();
 	void computeP();
@@ -37,6 +38,8 @@ public:
 	double getQ();
 	double getDeltaTime();
 	double getOptionPrice();
+
+	/* MATHEMATIC FUNCTIONS COMMONLY USED TO CALCULATE THE PRICE OF THE OPTION FOR EXAMPLE */
 	double power(double, int);
 	int factorial(int);
 	double max(double, double);

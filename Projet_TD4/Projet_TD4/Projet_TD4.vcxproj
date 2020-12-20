@@ -140,11 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AmericanOptionBinLattice.h" />
     <ClInclude Include="BinLattice.h" />
     <ClInclude Include="BinomialTree.h" />
+    <ClInclude Include="BlackScholesLimitBinomialTree.h" />
     <ClInclude Include="BlackScholes_Model.h" />
     <ClInclude Include="CRRPricer_ClosedMethod.h" />
     <ClInclude Include="CoxRossRubinsteinEuropeanOption.h" />
+    <ClInclude Include="MonteCarloOptionPricing.h" />
     <ClInclude Include="MonteCarlo_NormalLaw.h" />
     <ClInclude Include="mt19937_singleton.h" />
     <ClInclude Include="Node.h" />
@@ -153,12 +156,15 @@
     <ClInclude Include="RandomWalkGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AmericanOptionBinLattice.cpp" />
     <ClCompile Include="BinLattice.cpp" />
     <ClCompile Include="BinomialTree.cpp" />
+    <ClCompile Include="BlackScholesLimitBinomialTree.cpp" />
     <ClCompile Include="BlackScholes_Model.cpp" />
     <ClCompile Include="CRRPricer_ClosedMethod.cpp" />
     <ClCompile Include="CoxRossRubinsteinEuropeanOption.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MonteCarloOptionPricing.cpp" />
     <ClCompile Include="MonteCarlo_NormalLaw.cpp" />
     <ClCompile Include="mt19937_singleton.cpp" />
     <ClCompile Include="Node.cpp" />

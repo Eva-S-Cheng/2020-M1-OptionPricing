@@ -614,7 +614,49 @@ void run_TD5_CRR() {
 		std::cout << "Estimated Option Price by Binomial Value : " << CRRVector.at(i).getNodes().at(0)->getPayOff();
 		std::cout << std::endl;
 		std::cout << std::endl;
+		int choice = 0;
+
+		bool valid_input = false;
+		do
+		{
+			std::cout << "Display tree ? (1. Yes | 2. No)" << std::endl;
+			std::cin >> input;
+			try
+			{
+				choice = std::stoi(input);
+				if (choice != 1 && choice != 2)
+					std::cout << "Invalid choice, try again !" << std::endl;
+				else
+					valid_input = true;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+			}
+		} while (!valid_input);
+
+		if (choice == 1) {
+			BinLattice<int> test;
+			BinLattice<double> test2;
+			test.setN(CRRVector.at(i).getN(), 1.0);
+			test2.setN(CRRVector.at(i).getN(), 2.0);
+			int start = 0;
+			for (int j = 0; j <= CRRVector.at(i).getN(); j++)
+			{
+				for (int k = 0; k <= j; k++) {
+					test.setNode(j, k, round(CRRVector.at(j).getNodes().at(start)->getPrice()));
+					test2.setNode(j, k, CRRVector.at(j).getNodes().at(start)->getPayOff());
+					start++;
+				}
+			}
+			test.display();
+			test2.display();
+			test.stylishDisplay();
+			test2.stylishDisplay();
+
+		}
 	}
+	
 }
 
 void run_TD6_CRR() {
@@ -1014,34 +1056,6 @@ void run_TD6_OptionPayOffs() {
 }
 
 int main() {
-	// run_TD6_OptionPayOffs();
-	/*
-	CoxRossRubinsteinEuropeanOption testTree = CoxRossRubinsteinEuropeanOption(2, 6, 0.25, 0.05, 100.0, 102.0, call);
-	BinLattice<int> test;
-	BinLattice<double> test2;
-	test.setN(6, 1.0);
-	test2.setN(6, 2.0);
-	int start = 0;
-	testTree.displayTree();
-	for (int i = 0; i <= 6; i++)
-	{
-		for (int j = 0; j <= i; j++) {
-			test.setNode(i, j, round(testTree.getNodes().at(start)->getPrice()));
-			test2.setNode(i, j, testTree.getNodes().at(start)->getPayOff());
-			start++;
-		}
-	}
-	test.display();
-	test2.display();
-	test.stylishDisplay();
-	test2.stylishDisplay();
-
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-	BinLattice<char> test3;*/
-
-	// run_TD6_CRR();
-	run_TD5_CRR();
+	
 	return 0;
 }

@@ -1,10 +1,12 @@
 #include "RandomWalk.h"
 
+// Default constructor 
 RandomWalk::RandomWalk() {
 	_size = 0;
 	_mean = 0;
 }
 
+// Constructor with parameters 
 RandomWalk::RandomWalk(int size, std::vector<double> vec, Distribution dist)
 {
 	_size = size;
@@ -17,6 +19,7 @@ RandomWalk::~RandomWalk() {
 	// Destructor
 }
 
+// Mean of the values of random walk 
 double RandomWalk::computeMean() const{
 	double sum = 0;
 	for (int i = 0; i < _size; i++) {
@@ -25,14 +28,17 @@ double RandomWalk::computeMean() const{
 	return sum / (double)_size;
 }
 
+// Mean = computed mean
 void RandomWalk::setMean() {
 	_mean = computeMean();
 }
 
+// Setter with parameter
 void RandomWalk::setMean(double mean) {
 	_mean = mean;
 }
 
+/* GETTERS */
 double RandomWalk::getMean() const {
 	return _mean;
 }
@@ -53,6 +59,7 @@ double RandomWalk::getSD() const {
 	return sqrt(getVariance());
 }
 
+// Overloading the brackets 
 double RandomWalk::operator[](int index) const {
 	if (index < 0 || index >= _size) {
 		std::cout << "Out of range" << std::endl;

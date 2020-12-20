@@ -36,7 +36,6 @@ void MonteCarlo_NormalLaw::compute(int numberOfPoints)
 		sum = sum + function(_lower_limit + distribution(_gen) * ((double)_upper_limit - (double)_lower_limit));
 	}
 
-	// TD1, return sum * (b - a) / N as the estimation and we should consider the current estimate
 	_currentEstimate = (sum * ((double)_upper_limit - (double)_lower_limit) + _currentEstimate * (double)_n) / ((double)numberOfPoints + (double)_n);
 	_n = _n + numberOfPoints;
 }

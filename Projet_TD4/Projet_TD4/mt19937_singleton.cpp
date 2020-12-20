@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include <iostream>
 
-/*
-* CODE
-* PROVIDED
-* BY EVA CHENG
-*/
-
 /* ONE CONSTRUCTOR */
 mt19937_singleton::mt19937_singleton()
 {

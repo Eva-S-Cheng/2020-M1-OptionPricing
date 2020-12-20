@@ -23,28 +23,31 @@ private:
 	double _delta = 0;
 	int _method = 0;
 
-	bool computable();
-	void computeD1D2();
+	bool computable();					// Used only internally
+	void computeD1D2();					// The user cannot use it and access to it, it allows us to avoid some errors due to the bad usage of the program
 	void computeDelta();
 	void computePrice();
 
 public:
-	BlackScholes_Model();
+	BlackScholes_Model();				// default constructor
 	BlackScholes_Model(Type type, double strikePrice, double expiryDate, double underlyingPrice, double interestRate, double volatility, int method);
 	~BlackScholes_Model();
 
+
+	/* THE FOLLOWING METHODS ARE THE GETTERS */
 	double getD1();
 	double getD2();
 	double getDelta();
 	double getPrice();
-
-	const char* getType();
 	double getStrikePrice();
 	double getExpiryDate();
 	double getInterestRate();
 	double getVolatility();
 	double getUnderlyingPrice();
-	double calculate_cdf(double);
-	double calculate_cdf_erf(double);
+	const char* getType();
+
+	/* TWO METHODS USED TO CALCULATE THE CUMULATIVE DISTRIBUTION FUNCTION */
+	double calculate_cdf(double);		// Monte Carlo Approach 
+	double calculate_cdf_erf(double);	// Using the error function
 };
 

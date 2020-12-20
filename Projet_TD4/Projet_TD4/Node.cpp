@@ -1,5 +1,7 @@
 #include "Node.h"
 #include <iostream>
+
+// Default constructor
 Node::Node() {
 	_address = new int;
 	_price = 0.0;
@@ -8,6 +10,7 @@ Node::Node() {
 	_level = 1;
 }
 
+// Constructor with parameters
 Node::Node(int level, double probabilityYes, double probabilityNo, double price) {
 	_address = new int;
 	_price = price;
@@ -18,8 +21,10 @@ Node::Node(int level, double probabilityYes, double probabilityNo, double price)
 
 Node::~Node()
 {
+	//
 }
 
+/* GETTERS */
 double Node::getPrice() {
 	if (this == nullptr)
 		return 0.0;
@@ -41,6 +46,7 @@ int* Node::getAddress() {
 	return _address;
 }
 
+/* SETTERS */
 void Node::setParentUp(Node* parentUp) {
 	_parentUp = parentUp;
 }
@@ -61,6 +67,7 @@ void Node::setPrice(double price) {
 	_price = price;
 }
 
+/* Computes the binomial value for each node */
 void Node::setPayOff(double r, double deltaT) {
 	_payOff = (_p_child * _childUp->getPayOff() + _q_child * _childDown->getPayOff())*exp(-r*deltaT);
 }

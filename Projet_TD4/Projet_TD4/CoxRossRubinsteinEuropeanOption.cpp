@@ -1,11 +1,14 @@
 #include "CoxRossRubinsteinEuropeanOption.h"
 #include <iostream>
 #include <string>
+
+// Default constructor 
 CoxRossRubinsteinEuropeanOption::CoxRossRubinsteinEuropeanOption() {
 	_time = 0;
 	_n;
 }
 
+// Constructor with parameters 
 CoxRossRubinsteinEuropeanOption::CoxRossRubinsteinEuropeanOption(double time, int n, double volatility,
 	double riskFreeRate, double strike, double underlyingPrice, option_Type optionType) {
 	_time = time;
@@ -18,27 +21,32 @@ CoxRossRubinsteinEuropeanOption::CoxRossRubinsteinEuropeanOption(double time, in
 	createTree();
 }
 
+// Destructor
 CoxRossRubinsteinEuropeanOption::~CoxRossRubinsteinEuropeanOption()
 {
 	//
 }
 
+// Computing delta time 
 void CoxRossRubinsteinEuropeanOption::computeDeltaTime() {
 	_deltaTime = (double)_time / (double)_n;
 }
 
+// Computing U
 void CoxRossRubinsteinEuropeanOption::computeU() {
 	if (_deltaTime == 0)
 		computeDeltaTime();
 	_u = exp(_volatility * sqrt(_deltaTime));
 }
 
+// Computing D
 void CoxRossRubinsteinEuropeanOption::computeD() {
 	if (_u == 0)
 		computeU();
 	_d = 1 / _u;
 }
 
+// Computing p
 void CoxRossRubinsteinEuropeanOption::computeP() {
 	if (_u == _d) {
 		computeU();
@@ -50,14 +58,16 @@ void CoxRossRubinsteinEuropeanOption::computeP() {
 		_p = (exp(_riskFreeRate * _deltaTime) - _d) / (_u - _d);
 }		// Formula seen in the book "Options, futures and other derivatives assets" of Hull
 
-
+// Computing q
 void CoxRossRubinsteinEuropeanOption::computeQ() {
 	if (_p == 0)
 		computeP();
 	_q = 1.0 - _p;
 }
 
+// It creates the tree that will contain all the values
 void CoxRossRubinsteinEuropeanOption::createTree() {
+	// Computing all the parameters 
 	if (_u == 0)
 		computeU();
 	if (_d == 0)
@@ -70,7 +80,9 @@ void CoxRossRubinsteinEuropeanOption::createTree() {
 	{
 		_n = 1;
 	}
+	// Creating the initial node
 	_possibilitiesTree = BinomialTree(_u, _d, _n, _underlyingPrice, _p);
+	// Building the tree
 	_possibilitiesTree.buildTree(_riskFreeRate, _deltaTime);
 	//_possibilitiesTree.display(_possibilitiesTree.getFirstNode());
 }
@@ -87,9 +99,10 @@ void CoxRossRubinsteinEuropeanOption::createTerminalNodesValues() {
 	while (stop == false)
 	{
 		// std::cout << currentNode->getAddress() << " " << currentNode->getPrice() << std::endl;
-
+		// Create a vector with the terminal nodes 
 		_terminalNodesValues.push_back(currentNode->getPrice());
 		if (currentNode->getParentUp() != nullptr) {
+			// going through all the childs
 			currentNode = currentNode->getParentUp();
 			currentNode = currentNode->getChildDown();
 			// std::cout << currentNode->getAddress() << " DOWN " << currentNode->getPrice() << std::endl;
@@ -99,6 +112,7 @@ void CoxRossRubinsteinEuropeanOption::createTerminalNodesValues() {
 	}
 }
 
+// Vector that contains all the nodes of the tree
 void CoxRossRubinsteinEuropeanOption::createNodesVector() {
 	std::vector<Node*> queue;
 	queue.push_back(_possibilitiesTree.getFirstNode());
@@ -117,9 +131,12 @@ void CoxRossRubinsteinEuropeanOption::createNodesVector() {
 	}
 }
 
+// Creating the vector that contains all the payoffs 
 void CoxRossRubinsteinEuropeanOption::createPayOffs() {
+	// Creating the vector the terminal nodes if it is empty
 	if (_terminalNodesValues.empty())
 		createTerminalNodesValues();
+	// Computing the payoff depending on the type of option 
 	if (_optionType == call) {
 		for (int i = 0; i < _terminalNodesValues.size(); i++) {
 			if (_terminalNodesValues.at(i) - _strike > 0)
@@ -138,54 +155,13 @@ void CoxRossRubinsteinEuropeanOption::createPayOffs() {
 	}
 }
 
-
-double CoxRossRubinsteinEuropeanOption::getU() {
-	return _u;
-}
-
-double CoxRossRubinsteinEuropeanOption::getD() {
-	return _d;
-}
-
-double CoxRossRubinsteinEuropeanOption::getP() {
-	return _p;
-}
-
-double CoxRossRubinsteinEuropeanOption::getQ() {
-	return _q;
-}
-
-double CoxRossRubinsteinEuropeanOption::getDeltaTime() {
-	return _deltaTime;
-}
-
-BinomialTree CoxRossRubinsteinEuropeanOption::getTree() {
-	return _possibilitiesTree;
-}
-
-std::vector<double> CoxRossRubinsteinEuropeanOption::getNodesPrices() {
-	if (_terminalNodesValues.empty())
-		createTerminalNodesValues();
-	return _terminalNodesValues;
-}
-
-std::vector<double> CoxRossRubinsteinEuropeanOption::getPayOffs() {
-	if (_payOffs.empty())
-		createPayOffs();
-	return _payOffs;
-}
-
-std::vector<Node*> CoxRossRubinsteinEuropeanOption::getNodes() {
-	if (_nodes.empty())
-		createNodesVector();
-	return _nodes;
-}
-
+/* Computes the value of the option */
 void CoxRossRubinsteinEuropeanOption::computeBNValue() {
 	if (_payOffs.empty())
 		createPayOffs();
 	if (_nodes.empty())
 		createNodesVector();
+	// Creates the vector of the payoff
 	std::vector<double> payOff;
 	for (int i = 0; i < _payOffs.size(); i++)
 	{
@@ -201,14 +177,18 @@ void CoxRossRubinsteinEuropeanOption::computeBNValue() {
 			}
 		}
 	}
+
+	// From the end to the beginning 
 	for (int i = _nodes.size() - 1; i >= 0; i--)
 	{
+		// compute the binomial value
 		if (_nodes.at(i)->getLevel() < _n) {
 			_nodes.at(i)->setPayOff(_riskFreeRate, _deltaTime);
 		}
 	}
 }
 
+// Displays all the information about the tree
 void CoxRossRubinsteinEuropeanOption::displayTree() {
 	std::cout << std::endl;
 	std::cout << "Time : " << _time*365.5 << " days" << std::endl;
@@ -279,3 +259,50 @@ void CoxRossRubinsteinEuropeanOption::displayTree() {
 	std::cout << "Expected average pay off : " << sum << std::endl;
 }
 
+/* GETTERS */
+double CoxRossRubinsteinEuropeanOption::getU() {
+	return _u;
+}
+
+double CoxRossRubinsteinEuropeanOption::getD() {
+	return _d;
+}
+
+double CoxRossRubinsteinEuropeanOption::getP() {
+	return _p;
+}
+
+double CoxRossRubinsteinEuropeanOption::getQ() {
+	return _q;
+}
+
+double CoxRossRubinsteinEuropeanOption::getDeltaTime() {
+	return _deltaTime;
+}
+
+int CoxRossRubinsteinEuropeanOption::getN()
+{
+	return _n;
+}
+
+BinomialTree CoxRossRubinsteinEuropeanOption::getTree() {
+	return _possibilitiesTree;
+}
+
+std::vector<double> CoxRossRubinsteinEuropeanOption::getNodesPrices() {
+	if (_terminalNodesValues.empty())
+		createTerminalNodesValues();
+	return _terminalNodesValues;
+}
+
+std::vector<double> CoxRossRubinsteinEuropeanOption::getPayOffs() {
+	if (_payOffs.empty())
+		createPayOffs();
+	return _payOffs;
+}
+
+std::vector<Node*> CoxRossRubinsteinEuropeanOption::getNodes() {
+	if (_nodes.empty())
+		createNodesVector();
+	return _nodes;
+}

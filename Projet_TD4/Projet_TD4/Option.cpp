@@ -2,12 +2,14 @@
 #include <cmath>
 #include <iostream>
 
+// Default constructor
 Option::Option()
 {
 	_n = 1;
 	_time = 0.0;
 }
 
+// Constructor with parameters 
 Option::Option(double time, int n, double volatility, double riskFreeRate, double strike, double underlyingPrice)
 {
 	_time = time;
@@ -16,6 +18,7 @@ Option::Option(double time, int n, double volatility, double riskFreeRate, doubl
 	_riskFreeRate = riskFreeRate;
 	_strike = strike;
 	_underlyingPrice = underlyingPrice;
+	
 }
 
 Option::~Option()
@@ -23,6 +26,7 @@ Option::~Option()
 	//
 }
 
+// Computing the rate of u
 void Option::computeU()
 {
 	if (_deltaTime == 0)
@@ -32,6 +36,7 @@ void Option::computeU()
 	std::cout << std::endl;
 }
 
+// Computing d
 void Option::computeD()
 {
 	if (_u == 0)
@@ -41,6 +46,7 @@ void Option::computeD()
 	std::cout << std::endl;
 }
 
+// Computing p
 void Option::computeP()
 {
 	if (_u == _d) {
@@ -55,6 +61,7 @@ void Option::computeP()
 	std::cout << std::endl;
 }
 
+// Computing q
 void Option::computeQ()
 {
 	if (_p == 0)
@@ -64,6 +71,7 @@ void Option::computeQ()
 	std::cout << std::endl;
 }
 
+// Computing the delta time 
 void Option::computeDeltaTime()
 {
 	_deltaTime = (double)_time / (double)_n;
@@ -71,12 +79,16 @@ void Option::computeDeltaTime()
 	std::cout << std::endl;
 }
 
+// Computing the price 
 void Option::computePrice()
 {
+	// Computing u and d
 	if (_u == 0) {
 		computeU();
 		computeD();
 	}
+
+	// Same for p and q
 	if (_p == 0) {
 		computeP();
 		computeQ();
@@ -91,6 +103,8 @@ void Option::computePrice()
 		computeDeltaTime();
 	_optionPrice = 0;
 	for (int i = 0; i <= _n; i++) {
+
+		// Applying the closed method
 		int a = factorial(i) * factorial(_n - i);
 		if(a == 0)
 			_optionPrice = _optionPrice + factorial(_n) / 1.0
@@ -107,7 +121,7 @@ void Option::computePrice()
 	_optionPrice = _optionPrice / power((1 + _riskFreeRate), _n);
 }
 
-
+/* GETTERS */
 double Option::getU()
 {
 	if (_u == 0)
@@ -147,6 +161,12 @@ double Option::getOptionPrice()
 	return _optionPrice;
 }
 
+double Option::getStrike()
+{
+	return _strike;
+}
+
+/* CLASSICAL MATHEMATIC FUNCTIONS */
 double Option::power(double a, int n)
 {
 	if (n <= 0) {
@@ -170,6 +190,7 @@ double Option::max(double a, double b)
 	return b;
 }
 
+// Compute s_sni
 double Option::S_Ni(int i)
 {
 	if (_u == 0)
@@ -179,11 +200,7 @@ double Option::S_Ni(int i)
 	return _underlyingPrice * power(_u, i) * power(_d, _n - i);
 }
 
-double Option::getStrike()
-{
-	return _strike;
-}
-
+// Derivated classes, the constructors and destructor are the same
 EuropeanPUT::EuropeanPUT() : Option() {
 	//
 }
@@ -197,8 +214,9 @@ EuropeanPUT::~EuropeanPUT() {
 	//
 }
 
+// Pay off for an european put
 double EuropeanPUT::payOff(int i) {
-	return max(0, getStrike() - S_Ni(i));
+	return max(0, _strike - S_Ni(i));
 }
 
 
@@ -215,8 +233,9 @@ EuropeanCALL::~EuropeanCALL() {
 	//
 }
 
+// Pay off for an european call
 double EuropeanCALL::payOff(int i) {
-	return max(0, S_Ni(i) - getStrike());
+	return max(0, S_Ni(i) - _strike);
 }
 
 DigitalPUT::DigitalPUT() : Option() {
@@ -232,8 +251,9 @@ DigitalPUT::~DigitalPUT() {
 	//
 }
 
+// Pay off for a digital put
 double DigitalPUT::payOff(int i) {
-	if (S_Ni(i) <  getStrike())
+	if (S_Ni(i) <  _strike)
 		return 1;
 	return 0;
 }
@@ -251,8 +271,9 @@ DigitalCALL::~DigitalCALL() {
 	//
 }
 
+// Pay off for a digital call
 double DigitalCALL::payOff(int i) {
-	if (S_Ni(i) > getStrike())
+	if (S_Ni(i) > _strike)
 		return 1;
 	return 0;
 }
