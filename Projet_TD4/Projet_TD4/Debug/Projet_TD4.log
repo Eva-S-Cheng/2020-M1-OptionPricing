@@ -1,46 +1,55 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: Le répertoire intermédiaire (Debug\) contient des fichiers partagés provenant d'un autre projet (Projet_TD4.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
-  AmericanOptionBinLattice.cpp
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(6,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(11,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(35,23): warning C4018: '<=' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(34): message : pendant la compilation de la fonction membre classe modèle 'T BinLattice<T>::getNode(int,int)'
+  main.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.h(16,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.h(15,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(424,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(613,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(645,38): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=bool
+              T=int
           ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(79): message : voir la référence à l'instanciation de la fonction modèle 'T BinLattice<T>::getNode(int,int)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(651,30): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=bool
+              T=int
           ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.h(24): message : voir la référence à l'instanciation classe modèle 'BinLattice<bool>' en cours de compilation
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(39,29): warning C4018: '<=' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(28,23): warning C4018: '<=' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(27): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<bool>::setNode(int,int,T)'
-          with
-          [
-              T=bool
-          ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(184): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<bool>::setNode(int,int,T)' en cours de compilation
-          with
-          [
-              T=bool
-          ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(30,29): warning C4018: '<=' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(79,2): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(75): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<double>::stylishDisplay(void)'
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(84): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<double>::stylishDisplay(void)' en cours de compilation
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.h(22): message : voir la référence à l'instanciation classe modèle 'BinLattice<double>' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(75): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::stylishDisplay(void)'
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(658): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::stylishDisplay(void)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(643): message : voir la référence à l'instanciation classe modèle 'BinLattice<int>' en cours de compilation
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(81,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(83,17): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(119,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(49,2): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(46): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<double>::display(void)'
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(89): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<double>::display(void)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(46): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::display(void)'
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(656): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::display(void)' en cours de compilation
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(51,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(53,17): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(60,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(62,2): warning C4018: '<' : incompatibilité signed/unsigned
-  MonteCarloOptionPricing.cpp
-  Génération de code en cours...
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(28,23): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(27): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::setNode(int,int,T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(651): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::setNode(int,int,T)' en cours de compilation
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(30,29): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(35,23): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(34): message : pendant la compilation de la fonction membre classe modèle 'T BinLattice<T>::getNode(int,int)'
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(83): message : voir la référence à l'instanciation de la fonction modèle 'T BinLattice<T>::getNode(int,int)' en cours de compilation
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(39,29): warning C4018: '<=' : incompatibilité signed/unsigned
   Projet_TD4.vcxproj -> C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Debug\Projet_cpp.exe

@@ -34,7 +34,7 @@ public:
 	BlackScholesLimitBinomialTree(double, double, double, double, double, int, BSOpType);
 
 	double power(double, int);
-	int factorial(int);
+	double factorial(int);
 	double max(double, double);
 	double S_Ni(int);
 	double payOff(int);

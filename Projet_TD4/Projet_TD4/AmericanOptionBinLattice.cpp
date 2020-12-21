@@ -3,7 +3,6 @@
 AmericanOptionBinLattice::AmericanOptionBinLattice()
 {
 	_n = 1;
-	_time = 0.0;
 }
 
 AmericanOptionBinLattice::AmericanOptionBinLattice(double time, int n, double volatility, double riskFreeRate, double strike, double underlyingPrice, AmOPType type)
@@ -81,12 +80,18 @@ bool AmericanOptionBinLattice::getWhetherExercised(int n, int i)
 
 void AmericanOptionBinLattice::displayIntrinsicPayOff()
 {
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "Displays the intrinsic pay off" << std::endl;
 	_intrinsicPayOff.stylishDisplay();
 }
 
 void AmericanOptionBinLattice::displaypayOff()
 {
-	_payOff.display();
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "Displays the pay off of an american option" << std::endl;
+	_payOff.stylishDisplay();
 }
 
 double AmericanOptionBinLattice::power(double a, int n)
@@ -139,7 +144,7 @@ void AmericanOptionBinLattice::computeQ()
 
 void AmericanOptionBinLattice::computeDeltaTime()
 {
-	_deltaTime = _time / _n;
+	_deltaTime = _time/_n;
 }
 
 double AmericanOptionBinLattice::S_Ni(int i, int n)
@@ -176,7 +181,7 @@ void AmericanOptionBinLattice::createPayOff()
 	{
 		_payOff.setNode(_n, i, _intrinsicPayOff.getNode(_n, i));
 	}
-	for (int i = _n - 1; i <= 0; i--)
+	for (int i = _n - 1; i >= 0; i--)
 	{
 		for (int j = 0; j <= i; j++)
 		{
@@ -187,8 +192,40 @@ void AmericanOptionBinLattice::createPayOff()
 	}
 }
 
+void AmericanOptionBinLattice::displayBool() {
+	BinLattice<int> binaryTree;
+	binaryTree.setN(_n, 999);
+
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "Displays 111 if we should use american option, 999 if not" << std::endl;
+
+	for (int i = 0; i <= _n; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			if (_exercised.getNode(i, j) == true)
+				binaryTree.setNode(i, j, 111);
+		}
+	}
+
+	binaryTree.stylishDisplay();
+}
+
+
 void AmericanOptionBinLattice::computePrice()
 {
+	if (_u == 0)
+		computeU();
+	if (_d == 0)
+		computeD();
+	if (_p == 0)
+		computeP();
+	if (_q == 0)
+		computeQ();
+	if (_deltaTime == 0)
+		computeDeltaTime();
 	createPayOff();
 	_opPrice = _payOff.getNode(0, 0);
 }

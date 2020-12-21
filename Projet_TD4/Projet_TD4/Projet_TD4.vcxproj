@@ -147,6 +147,7 @@
     <ClInclude Include="BlackScholes_Model.h" />
     <ClInclude Include="CRRPricer_ClosedMethod.h" />
     <ClInclude Include="CoxRossRubinsteinEuropeanOption.h" />
+    <ClInclude Include="MethodComparerMonteCarloVSTree.h" />
     <ClInclude Include="MonteCarloOptionPricing.h" />
     <ClInclude Include="MonteCarlo_NormalLaw.h" />
     <ClInclude Include="mt19937_singleton.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="CRRPricer_ClosedMethod.cpp" />
     <ClCompile Include="CoxRossRubinsteinEuropeanOption.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MethodComparerMonteCarloVSTree.cpp" />
     <ClCompile Include="MonteCarloOptionPricing.cpp" />
     <ClCompile Include="MonteCarlo_NormalLaw.cpp" />
     <ClCompile Include="mt19937_singleton.cpp" />

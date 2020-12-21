@@ -58,6 +58,7 @@ public:
 	double getRate();
 	double getMaturity();
 	double getStrike();
+	double getVolatility();
 	double getUnderlyingPrice();
 	double getNumberOfSteps();
 	double getAverage();

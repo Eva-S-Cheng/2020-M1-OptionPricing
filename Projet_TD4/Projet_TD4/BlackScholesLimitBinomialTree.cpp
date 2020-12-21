@@ -1,18 +1,21 @@
 #include "BlackScholesLimitBinomialTree.h"
 #include <cmath>
+#include <iostream>
 
 void BlackScholesLimitBinomialTree::computeU()
 {
 	if (_deltaTime == 0)
 		computeDeltaTime();
-	_u = exp((_riskFreeRate + _volatility*_volatility/2)* _deltaTime + _volatility*sqrt(_deltaTime)) - 1.0;
+	_u = exp((_riskFreeRate + _volatility*_volatility/2)* _deltaTime + _volatility*sqrt(_deltaTime)) - 1;
+	std::cout << _u << std::endl;
 }
 
 void BlackScholesLimitBinomialTree::computeD()
 {
 	if (_deltaTime == 0)
 		computeDeltaTime();
-	_d = exp((_riskFreeRate + _volatility * _volatility / 2) * _deltaTime - _volatility * sqrt(_deltaTime)) - 1.0;
+	_d = exp((_riskFreeRate + _volatility * _volatility / 2) * _deltaTime - _volatility * sqrt(_deltaTime)) - 1;
+	std::cout << _d << std::endl;
 }
 
 void BlackScholesLimitBinomialTree::computeP()
@@ -26,6 +29,7 @@ void BlackScholesLimitBinomialTree::computeP()
 		_p = 0;
 	else
 		_p = (_r - _d) / (_u - _d);
+	std::cout << _p <<std::endl;
 }
 
 void BlackScholesLimitBinomialTree::computeQ()
@@ -33,7 +37,7 @@ void BlackScholesLimitBinomialTree::computeQ()
 	if (_p == 0)
 		computeP();
 	_q = 1 - _p; 
-
+	std::cout << _q << std::endl;
 }
 
 void BlackScholesLimitBinomialTree::computeR()
@@ -41,6 +45,7 @@ void BlackScholesLimitBinomialTree::computeR()
 	if (_deltaTime == 0)
 		computeDeltaTime();
 	_r = exp(_riskFreeRate * _deltaTime) - 1;
+	std::cout << _r << std::endl;
 }
 
 void BlackScholesLimitBinomialTree::computeDeltaTime()
@@ -67,12 +72,12 @@ void BlackScholesLimitBinomialTree::computePrice()
 	}
 	if (_deltaTime == 0)
 		computeDeltaTime();
-
+	_optionPrice = 0;
 	// Using the closed method to compute the price
 	for (int i = 0; i <= _n; i++) {
-		_optionPrice = _optionPrice + factorial(_n) / (factorial(i) * factorial(_n - i))
-			* power(_q, i)
-			* power(1.0 - _q, _n - i)
+		_optionPrice = _optionPrice  + factorial(_n)/(factorial(i)*factorial(_n - i)) *
+			power(_p, i)
+			* power(_q, _n - i)
 			* payOff(i);
 	}
 	_optionPrice = _optionPrice / power((1 + _r), _n);
@@ -103,12 +108,13 @@ double BlackScholesLimitBinomialTree::power(double a, int n)
 	return a * power(a, n - 1);
 }
 
-int BlackScholesLimitBinomialTree::factorial(int n)
+double BlackScholesLimitBinomialTree::factorial(int n)
 {
-	if (n <= 0) {
-		return 1;
+	double fact = 1; 
+	for (int i = 1; i <= n; i++) {
+		fact = fact * i;
 	}
-	return n * factorial(n - 1);
+	return fact;
 }
 
 double BlackScholesLimitBinomialTree::max(double a, double b)

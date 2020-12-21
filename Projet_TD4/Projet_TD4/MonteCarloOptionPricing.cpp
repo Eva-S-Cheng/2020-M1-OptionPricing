@@ -51,12 +51,12 @@ void MonteCarloOptionPricing::computeStandardDeviation()
 	}
 	double sum = 0.0;
 	for (int i = 0; i < _n; i++) {
-		sum = _hT.at(i) * _hT.at(i) + sum;
+		sum = _hT.at(i)*exp(-_riskFreeRate*_maturity) * _hT.at(i) * exp(-_riskFreeRate * _maturity) + sum;
 	}
 	if(_n !=0)
 		sum = sum / _n;
 	// Absolute value to avoid errors 
-	_std = sqrt(abs(sum - _expectedPayOff * _expectedPayOff));
+	_std = sqrt(abs(sum - exp(-_riskFreeRate * _maturity) * _expectedPayOff * _expectedPayOff * exp(-_riskFreeRate * _maturity)));
 }
 
 /* GETTERS */
@@ -81,6 +81,11 @@ double MonteCarloOptionPricing::getMaturity()
 double MonteCarloOptionPricing::getStrike()
 {
 	return _strike;
+}
+
+double MonteCarloOptionPricing::getVolatility()
+{
+	return _volatility;
 }
 
 double MonteCarloOptionPricing::getUnderlyingPrice()
@@ -129,12 +134,12 @@ void MonteCarloOptionPricing::refine(int number)
 // Confindence interval for 95% = [mean +/- 2 * std/sqrt(n)]
 double MonteCarloOptionPricing::uBoundConfInterval()
 {
-	return _expectedPayOff + _std * 2 / sqrt(_n);
+	return _h0 + _std * 2 / sqrt(_n);
 }
 
 double MonteCarloOptionPricing::dBouldConfInterval()
 {
-	return _expectedPayOff - _std * 2 / sqrt(_n);
+	return _h0 - _std * 2 / sqrt(_n);
 }
 
 // Default constructor 

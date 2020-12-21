@@ -1,4 +1,4 @@
-#include <stdlib.h>
+﻿#include <stdlib.h>
 #include <stdio.h>
 #include <functional>
 #include <random>
@@ -19,8 +19,12 @@
 #include "CRRPricer_ClosedMethod.h"
 #include "Option.h"
 #include "BinLattice.h"
+#include "AmericanOptionBinLattice.h"
+#include "BlackScholesLimitBinomialTree.h"
+#include "MethodComparerMonteCarloVSTree.h"
+#include "MonteCarloOptionPricing.h"
 
-double BoxMullerGenerator(double mean, double variance)			// Centered and reduced variable Z = (X - �)/sqrt(Var) => X = Z * sqrt(Var) + mean
+double BoxMullerGenerator(double mean, double variance)			// Centered and reduced variable Z = (X - µ)/sqrt(Var) => X = Z * sqrt(Var) + mean
 {																// d = sqrt(-2*ln(U1)/U1) => Z = x * d
 	double	x, y, res; 											// X = Z * sqrt(Var) + mean
 	if (variance < 0) {
@@ -246,6 +250,7 @@ void run_TD4() {
 }
 
 void run_TD5_BlackScholes() {
+	std::cout << "======== TD 5 : BLACK SCHOLES ========" << std::endl << std::endl;
 	std::vector<BlackScholes_Model> blackScholesVector;
 	int number_of_models;
 	std::string input;
@@ -439,6 +444,7 @@ void run_TD5_BlackScholes() {
 }
 
 void run_TD5_CRR() {
+	std::cout << "======== TD 5 : COX ROSS RUBINSTEIN ========" << std::endl << std::endl;
 	std::vector<CoxRossRubinsteinEuropeanOption> CRRVector;
 	int number_of_CRR;
 	std::string input;
@@ -660,6 +666,7 @@ void run_TD5_CRR() {
 }
 
 void run_TD6_CRR() {
+	std::cout << "======== TD 6 : COX ROSS RUBINSTEIN ========" << std::endl << std::endl;
 	std::vector<CRRPricer_ClosedMethod> CRRVector;
 	int number_of_CRR;
 	std::string input;
@@ -848,6 +855,7 @@ void run_TD6_CRR() {
 
 
 void run_TD6_OptionPayOffs() {
+	std::cout << "======== TD 6 : OPTIONS ========" << std::endl << std::endl;
 	int number_of_CRR;
 	std::string input;
 	std::vector<Option*> options;
@@ -1055,7 +1063,612 @@ void run_TD6_OptionPayOffs() {
 	}
 }
 
+void run_TD6_Tree()
+{
+	std::cout << "======== TD 6 : BIN LATTICE TREE ========" << std::endl << std::endl;
+	BinLattice<double> test;
+	CoxRossRubinsteinEuropeanOption crr = CoxRossRubinsteinEuropeanOption(4.0, 8, 0.05, 0.25, 100, 102, call);
+	test.setN(8, 0.0);
+	crr.displayTree();
+	int start = 0;
+	for (int i = 0; i <= 8; i++) {
+		for (int j = 0; j <= i; j++)
+		{
+			test.setNode(i, j, round(crr.getNodes().at(start)->getPrice()));
+			start++;
+		}
+	}
+	test.stylishDisplay();
+}
+
+void run_TD7() {
+	std::cout << "======== TD 7 : MONTE CARLO ========" << std::endl << std::endl;
+	std::vector<MonteCarloOptionPricing*> MCOptionVector;
+	int number_of_Options;
+	std::string input;
+
+	do
+	{
+		std::cout << "For how many options would you like to simulate the price (integer) ?" << std::endl;
+		std::cin >> input;
+		try
+		{
+			number_of_Options = std::stoi(input);
+			if (number_of_Options <= 0)
+				std::cout << "Invalid number of models, try again !" << std::endl;
+		}
+		catch (std::invalid_argument e)
+		{
+			std::cout << "Error, invalid argument" << std::endl;
+			number_of_Options = -1;
+		}
+	} while (number_of_Options <= 0);
+
+	for (int i = 0; i < number_of_Options; i++) {
+		double strikePrice;
+		do
+		{
+			std::cout << "Enter a strike price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				strikePrice = std::stod(input);
+				if (strikePrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				strikePrice = -1;
+			}
+		} while (strikePrice <= 0);
+
+
+		double maturity;
+		do
+		{
+			std::cout << "Enter a maturity in years (0.5 for 6 months) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				maturity = std::stod(input);
+				if (maturity <= 0 || maturity >= 50)
+					std::cout << "Invalid maturity, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				maturity = -1;
+			}
+		} while (maturity <= 0 || maturity >= 50);
+
+		double underlyingPrice;
+		do
+		{
+			std::cout << "Enter an underlying price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				underlyingPrice = std::stod(input);
+				if (underlyingPrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				underlyingPrice = -1;
+			}
+		} while (underlyingPrice <= 0);
+
+		double volatility;
+		do
+		{
+			std::cout << "Enter a volatility in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				volatility = std::stod(input);
+				volatility = volatility / 100.0;
+				if (volatility <= 0 || volatility >= 1)
+					std::cout << "Invalid volatility, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				volatility = -1;
+			}
+		} while (volatility <= 0 || volatility >= 1);
+
+		double riskFreeRate;
+		do
+		{
+			std::cout << "Enter a Rate in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				riskFreeRate = std::stod(input);
+				riskFreeRate = riskFreeRate / 100.0;
+				if (riskFreeRate <= 0 || riskFreeRate >= 1)
+					std::cout << "Invalid rate, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				riskFreeRate = -1;
+			}
+		} while (riskFreeRate <= 0 || riskFreeRate >= 1);
+
+
+		int periods;
+		do
+		{
+			std::cout << "How many periods would you like to consider ?" << std::endl;
+			std::cin >> input;
+			try
+			{
+				periods = std::stoi(input);
+				if (periods <= 0)
+					std::cout << "Invalid number of periods, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				periods = -1;
+			}
+		} while (periods <= 0);
+
+		int choice;
+		bool validChoice = false;
+		do
+		{
+			std::cout << "What type of option is it ?\n	1. European Put\n	2. European Call\n	3. Asian Put\n	4. Asian Call" << std::endl;
+			std::cin >> input;
+			try
+			{
+				choice = std::stoi(input);
+				if (choice < 1 || choice > 4)
+					std::cout << "Invalid choice, try again !" << std::endl;
+				else
+					validChoice = true;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+			}
+		} while (!validChoice);
+
+		switch (choice)
+		{
+		case 1:
+			MCOptionVector.push_back(new EuropeanMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, PutOP));
+			break;
+		case 2:
+			MCOptionVector.push_back(new EuropeanMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, CallOP));
+			break;
+		case 3:
+			int m;
+			do
+			{
+				std::cout << "How many steps would you like to consider ?" << std::endl;
+				std::cin >> input;
+				try
+				{
+					m = std::stoi(input);
+					if (m <= 0)
+						std::cout << "Invalid number of periods, try again !" << std::endl;
+				}
+				catch (std::invalid_argument e)
+				{
+					std::cout << "Error, invalid argument" << std::endl;
+					m = -1;
+				}
+			} while (m <= 0);
+			MCOptionVector.push_back(new AsianMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, m, periods, CallOP));
+			break;
+		case 4:
+			int m;
+			do
+			{
+				std::cout << "How many steps would you like to consider ?" << std::endl;
+				std::cin >> input;
+				try
+				{
+					m = std::stoi(input);
+					if (m <= 0)
+						std::cout << "Invalid number of periods, try again !" << std::endl;
+				}
+				catch (std::invalid_argument e)
+				{
+					std::cout << "Error, invalid argument" << std::endl;
+					m = -1;
+				}
+			} while (m <= 0);
+			MCOptionVector.push_back(new AsianMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, m, periods, CallOP));
+			break;
+		default:
+			break;
+		}
+
+		for (int i = 0; i < number_of_Options; i++)
+		{
+			std::cout << "Risk free rate : " << MCOptionVector.at(i)->getRate() << std::endl;
+			std::cout << "Maturity : " << MCOptionVector.at(i)->getMaturity() << std::endl;
+			std::cout << "Strike : " << MCOptionVector.at(i)->getStrike() << std::endl;
+			std::cout << "Underlying Price : " << MCOptionVector.at(i)->getUnderlyingPrice() << std::endl;
+			std::cout << "Volatility : " << MCOptionVector.at(i)->getVolatility() << std::endl;
+			std::cout << "m : " << MCOptionVector.at(i)->getNumberOfSteps() << std::endl;
+			std::cout << "n : " << MCOptionVector.at(i)->getN() << std::endl;
+			std::cout << "Option Price : " << MCOptionVector.at(i)->getH0() << std::endl;
+			std::cout << "Confidence Interval : [ " << MCOptionVector.at(i)->dBouldConfInterval() << " ; " << MCOptionVector.at(i)->dBouldConfInterval() << " ]" << std::endl;
+		}
+	}
+}
+
+void run_TD8_AmericanOption() {
+	std::cout << "======== TD 8 : AMERICAN OPTIONS ========" << std::endl << std::endl;
+	std::vector<AmericanOptionBinLattice> AMOptions;
+	int number_of_Options;
+	std::string input;
+
+	do
+	{
+		std::cout << "For how many options would you like to simulate the price (integer) ?" << std::endl;
+		std::cin >> input;
+		try
+		{
+			number_of_Options = std::stoi(input);
+			if (number_of_Options <= 0)
+				std::cout << "Invalid number of models, try again !" << std::endl;
+		}
+		catch (std::invalid_argument e)
+		{
+			std::cout << "Error, invalid argument" << std::endl;
+			number_of_Options = -1;
+		}
+	} while (number_of_Options <= 0);
+
+	for (int i = 0; i < number_of_Options; i++) {
+		double strikePrice;
+		do
+		{
+			std::cout << "Enter a strike price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				strikePrice = std::stod(input);
+				if (strikePrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				strikePrice = -1;
+			}
+		} while (strikePrice <= 0);
+
+
+		double maturity;
+		do
+		{
+			std::cout << "Enter a maturity in years (0.5 for 6 months) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				maturity = std::stod(input);
+				if (maturity <= 0 || maturity >= 50)
+					std::cout << "Invalid maturity, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				maturity = -1;
+			}
+		} while (maturity <= 0 || maturity >= 50);
+
+		double underlyingPrice;
+		do
+		{
+			std::cout << "Enter an underlying price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				underlyingPrice = std::stod(input);
+				if (underlyingPrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				underlyingPrice = -1;
+			}
+		} while (underlyingPrice <= 0);
+
+		double volatility;
+		do
+		{
+			std::cout << "Enter a volatility in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				volatility = std::stod(input);
+				volatility = volatility / 100.0;
+				if (volatility <= 0 || volatility >= 1)
+					std::cout << "Invalid volatility, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				volatility = -1;
+			}
+		} while (volatility <= 0 || volatility >= 1);
+
+		double riskFreeRate;
+		do
+		{
+			std::cout << "Enter a Rate in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				riskFreeRate = std::stod(input);
+				riskFreeRate = riskFreeRate / 100.0;
+				if (riskFreeRate <= 0 || riskFreeRate >= 1)
+					std::cout << "Invalid rate, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				riskFreeRate = -1;
+			}
+		} while (riskFreeRate <= 0 || riskFreeRate >= 1);
+
+
+		int periods;
+		do
+		{
+			std::cout << "How many periods would you like to consider ?" << std::endl;
+			std::cin >> input;
+			try
+			{
+				periods = std::stoi(input);
+				if (periods <= 0)
+					std::cout << "Invalid number of periods, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				periods = -1;
+			}
+		} while (periods <= 0);
+
+		int choice;
+		bool validChoice = false;
+		do
+		{
+			std::cout << "What type of option is it ?\n	1. Put\n	2. Call\n" << std::endl;
+			std::cin >> input;
+			try
+			{
+				choice = std::stoi(input);
+				if (choice < 1 || choice > 2)
+					std::cout << "Invalid choice, try again !" << std::endl;
+				else
+					validChoice = true;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+			}
+		} while (!validChoice);
+
+		AmericanOptionBinLattice put;
+		AmericanOptionBinLattice call;
+		switch (choice)
+		{
+		case 1:
+			put = AmericanOptionBinLattice(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, AmPut);
+			AMOptions.push_back(put);
+			put.displayIntrinsicPayOff();
+			put.displaypayOff();
+			put.displayBool();
+			break;
+		case 2:
+			call = AmericanOptionBinLattice(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, AmCall);
+			AMOptions.push_back(call);
+			call.displayIntrinsicPayOff();
+			call.displaypayOff();
+			call.displayBool();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void run_TD8_ComparingTreeAndMonteCarlo() {
+	std::cout << "======== TD 8 : MONTE CARLO VS BLACK SCHOLES ========" << std::endl << std::endl;
+	std::vector<MethodComparerMonteCarloVSTree> comparer;
+	int number_of_Options;
+	std::string input;
+
+	do
+	{
+		std::cout << "For how many options would you like to simulate the price (integer) ?" << std::endl;
+		std::cin >> input;
+		try
+		{
+			number_of_Options = std::stoi(input);
+			if (number_of_Options <= 0)
+				std::cout << "Invalid number of models, try again !" << std::endl;
+		}
+		catch (std::invalid_argument e)
+		{
+			std::cout << "Error, invalid argument" << std::endl;
+			number_of_Options = -1;
+		}
+	} while (number_of_Options <= 0);
+
+	for (int i = 0; i < number_of_Options; i++) {
+		double strikePrice;
+		do
+		{
+			std::cout << "Enter a strike price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				strikePrice = std::stod(input);
+				if (strikePrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				strikePrice = -1;
+			}
+		} while (strikePrice <= 0);
+
+
+		double maturity;
+		do
+		{
+			std::cout << "Enter a maturity in years (0.5 for 6 months) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				maturity = std::stod(input);
+				if (maturity <= 0 || maturity >= 50)
+					std::cout << "Invalid maturity, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				maturity = -1;
+			}
+		} while (maturity <= 0 || maturity >= 50);
+
+		double underlyingPrice;
+		do
+		{
+			std::cout << "Enter an underlying price : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				underlyingPrice = std::stod(input);
+				if (underlyingPrice <= 0)
+					std::cout << "Invalid price, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				underlyingPrice = -1;
+			}
+		} while (underlyingPrice <= 0);
+
+		double volatility;
+		do
+		{
+			std::cout << "Enter a volatility in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				volatility = std::stod(input);
+				volatility = volatility / 100.0;
+				if (volatility <= 0 || volatility >= 1)
+					std::cout << "Invalid volatility, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				volatility = -1;
+			}
+		} while (volatility <= 0 || volatility >= 1);
+
+		double riskFreeRate;
+		do
+		{
+			std::cout << "Enter a Rate in % (max 100) : " << std::endl;
+			std::cin >> input;
+			try
+			{
+				riskFreeRate = std::stod(input);
+				riskFreeRate = riskFreeRate / 100.0;
+				if (riskFreeRate <= 0 || riskFreeRate >= 1)
+					std::cout << "Invalid rate, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				riskFreeRate = -1;
+			}
+		} while (riskFreeRate <= 0 || riskFreeRate >= 1);
+
+
+		int periods;
+		do
+		{
+			std::cout << "How many periods would you like to consider ?" << std::endl;
+			std::cin >> input;
+			try
+			{
+				periods = std::stoi(input);
+				if (periods <= 0)
+					std::cout << "Invalid number of periods, try again !" << std::endl;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+				periods = -1;
+			}
+		} while (periods <= 0);
+
+		int choice;
+		bool validChoice = false;
+		do
+		{
+			std::cout << "What type of option is it ?\n	1. Put\n	2. Call\n" << std::endl;
+			std::cin >> input;
+			try
+			{
+				choice = std::stoi(input);
+				if (choice < 1 || choice > 2)
+					std::cout << "Invalid choice, try again !" << std::endl;
+				else
+					validChoice = true;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << "Error, invalid argument" << std::endl;
+			}
+		} while (!validChoice);
+
+		MethodComparerMonteCarloVSTree put;
+		MethodComparerMonteCarloVSTree call;
+		switch (choice)
+		{
+		case 1:
+			put = MethodComparerMonteCarloVSTree(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, comparerPUT);
+			comparer.push_back(put);
+
+			put.displayBest();
+			break;
+		case 2:
+			call = MethodComparerMonteCarloVSTree(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, comparerCALL);
+			comparer.push_back(call);
+			call.displayBest();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 int main() {
-	
+	run_TD4();
+	run_TD5_BlackScholes();
+	run_TD5_CRR();
+	run_TD6_CRR();
+	run_TD6_OptionPayOffs();
+	run_TD7();
+	run_TD8_AmericanOption();
+	run_TD8_ComparingTreeAndMonteCarlo();
 	return 0;
 }

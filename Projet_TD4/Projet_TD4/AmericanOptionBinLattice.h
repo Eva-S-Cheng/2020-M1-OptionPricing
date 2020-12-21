@@ -6,7 +6,7 @@ enum AmOPType {
 class AmericanOptionBinLattice
 {
 private :
-	int _time;
+	double _time;
 	int _n;
 	double _deltaTime = 0.0;
 	double _volatility = 0.0;
@@ -48,6 +48,7 @@ public :
 	bool getWhetherExercised(int, int);
 	void displayIntrinsicPayOff();
 	void displaypayOff();
+	void displayBool();
 
 	double power(double, int);
 	double max(double, double);
