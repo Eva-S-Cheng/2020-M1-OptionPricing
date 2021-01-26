@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MethodComparerMonteCarloVSTree.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'MethodComparerMonteCarloVSTree::_maturity' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>MethodComparerMonteCarloVSTree::{ctor}</FUNCTION>
+    <DECORATED>??0MethodComparerMonteCarloVSTree@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MethodComparerMonteCarloVSTree::_maturity</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MethodComparerMonteCarloVSTree.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'MethodComparerMonteCarloVSTree::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>MethodComparerMonteCarloVSTree::{ctor}</FUNCTION>
+    <DECORATED>??0MethodComparerMonteCarloVSTree@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MethodComparerMonteCarloVSTree::_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MethodComparerMonteCarloVSTree.cpp</FILENAME>
+      <LINE>9</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'comparerOP’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>MethodComparerMonteCarloVSTree::{ctor}</FUNCTION>
+    <DECORATED>??0MethodComparerMonteCarloVSTree@@QAE@NNNNNHW4comparerOP@@@Z</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MethodComparerMonteCarloVSTree.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'opType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>MonteCarloOptionPricing::=</FUNCTION>
+    <DECORATED>??4MonteCarloOptionPricing@@QAEAAV0@ABV0@@Z</DECORATED>
+    <FUNCLINE>67</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

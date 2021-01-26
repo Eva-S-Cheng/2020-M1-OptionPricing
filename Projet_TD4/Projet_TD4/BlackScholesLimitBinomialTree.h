@@ -6,6 +6,8 @@ enum BSOpType {
 class BlackScholesLimitBinomialTree
 {
 private :
+
+	/* Classical parameters of an option */
 	double _u = 0.0;
 	double _d = 0.0;
 	double _r = 0.0;
@@ -21,6 +23,7 @@ private :
 	double _optionPrice = 0.0;
 	BSOpType _type;
 
+	/* COMPUTERS */
 	void computeU();
 	void computeD();
 	void computeP();
@@ -30,15 +33,19 @@ private :
 	void computePrice();
 
 public:
+	/* CONSTRUCTORS AND DESTRUCTOR */
 	BlackScholesLimitBinomialTree();
 	BlackScholesLimitBinomialTree(double, double, double, double, double, int, BSOpType);
+	~BlackScholesLimitBinomialTree();
 
+	/* CLASSICALN MATHEMATICAL FUNCTIONS */
 	double power(double, int);
 	double factorial(int);
 	double max(double, double);
 	double S_Ni(int);
 	double payOff(int);
 
+	/* GETTERS */
 	double getU();
 	double getD();
 	double getP();

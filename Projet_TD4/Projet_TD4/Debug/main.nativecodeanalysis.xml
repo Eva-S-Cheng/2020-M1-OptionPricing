@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>117</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'Distribution’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>run_TD4</FUNCTION>
+    <DECORATED>?run_TD4@@YAXXZ</DECORATED>
+    <FUNCLINE>85</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>278</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>run_TD5_BlackScholes</FUNCTION>
+    <DECORATED>?run_TD5_BlackScholes@@YAXXZ</DECORATED>
+    <FUNCLINE>252</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>472</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'option_Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>run_TD5_CRR</FUNCTION>
+    <DECORATED>?run_TD5_CRR@@YAXXZ</DECORATED>
+    <FUNCLINE>446</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BinLattice.h</FILENAME>
+      <LINE>196</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BinLattice&lt;int&gt;::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BinLattice&lt;int&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$BinLattice@H@@QAE@XZ</DECORATED>
+    <FUNCLINE>196</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BinLattice&lt;int&gt;::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BinLattice.h</FILENAME>
+      <LINE>196</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BinLattice&lt;double&gt;::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BinLattice&lt;double&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$BinLattice@N@@QAE@XZ</DECORATED>
+    <FUNCLINE>196</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BinLattice&lt;double&gt;::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>694</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'optionName’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>run_TD6_CRR</FUNCTION>
+    <DECORATED>?run_TD6_CRR@@YAXXZ</DECORATED>
+    <FUNCLINE>668</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>1484</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'AmOPType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>AmericanOptionBinLattice::=</FUNCTION>
+    <DECORATED>??4AmericanOptionBinLattice@@QAEAAV0@ABV0@@Z</DECORATED>
+    <FUNCLINE>69</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>1663</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'comparerOP’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>MethodComparerMonteCarloVSTree::=</FUNCTION>
+    <DECORATED>??4MethodComparerMonteCarloVSTree@@QAEAAV0@$$QAV0@@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>1663</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'opType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>MonteCarloOptionPricing::=</FUNCTION>
+    <DECORATED>??4MonteCarloOptionPricing@@QAEAAV0@ABV0@@Z</DECORATED>
+    <FUNCLINE>67</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

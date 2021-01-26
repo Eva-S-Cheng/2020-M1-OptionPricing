@@ -72,10 +72,12 @@ void Node::setPayOff(double r, double deltaT) {
 	_payOff = (_p_child * _childUp->getPayOff() + _q_child * _childDown->getPayOff())*exp(-r*deltaT);
 }
 
+// Setter
 void Node::setPayOff(double binomialValue) {
 	_payOff = binomialValue;
 }
 
+/* GETTERS for the Nodes */
 Node* Node::getParentUp() {
 	if (this == nullptr)
 		return nullptr;

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>AmericanOptionBinLattice.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'AmericanOptionBinLattice::_time' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>AmericanOptionBinLattice::{ctor}</FUNCTION>
+    <DECORATED>??0AmericanOptionBinLattice@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>AmericanOptionBinLattice::_time</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>AmericanOptionBinLattice.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'AmericanOptionBinLattice::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>AmericanOptionBinLattice::{ctor}</FUNCTION>
+    <DECORATED>??0AmericanOptionBinLattice@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>AmericanOptionBinLattice::_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BinLattice.h</FILENAME>
+      <LINE>196</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BinLattice&lt;double&gt;::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BinLattice&lt;double&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$BinLattice@N@@QAE@XZ</DECORATED>
+    <FUNCLINE>196</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BinLattice&lt;double&gt;::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BinLattice.h</FILENAME>
+      <LINE>196</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BinLattice&lt;bool&gt;::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BinLattice&lt;bool&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$BinLattice@_N@@QAE@XZ</DECORATED>
+    <FUNCLINE>196</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BinLattice&lt;bool&gt;::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>AmericanOptionBinLattice.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'AmOPType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>AmericanOptionBinLattice::{ctor}</FUNCTION>
+    <DECORATED>??0AmericanOptionBinLattice@@QAE@NHNNNNW4AmOPType@@@Z</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BinLattice.h</FILENAME>
+      <LINE>196</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BinLattice&lt;int&gt;::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BinLattice&lt;int&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$BinLattice@H@@QAE@XZ</DECORATED>
+    <FUNCLINE>196</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BinLattice&lt;int&gt;::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

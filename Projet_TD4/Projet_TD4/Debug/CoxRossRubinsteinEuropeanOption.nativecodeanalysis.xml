@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>6</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'CoxRossRubinsteinEuropeanOption::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::{ctor}</FUNCTION>
+    <DECORATED>??0CoxRossRubinsteinEuropeanOption@@QAE@XZ</DECORATED>
+    <FUNCLINE>6</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CoxRossRubinsteinEuropeanOption::_n</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>6</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'CoxRossRubinsteinEuropeanOption::_optionType' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::{ctor}</FUNCTION>
+    <DECORATED>??0CoxRossRubinsteinEuropeanOption@@QAE@XZ</DECORATED>
+    <FUNCLINE>6</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CoxRossRubinsteinEuropeanOption::_optionType</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>12</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'option_Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::{ctor}</FUNCTION>
+    <DECORATED>??0CoxRossRubinsteinEuropeanOption@@QAE@NHNNNNW4option_Type@@@Z</DECORATED>
+    <FUNCLINE>12</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>228</LINE>
+      <COLUMN>81</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::displayTree</FUNCTION>
+    <DECORATED>?displayTree@CoxRossRubinsteinEuropeanOption@@QAEXXZ</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>229</LINE>
+      <COLUMN>64</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::displayTree</FUNCTION>
+    <DECORATED>?displayTree@CoxRossRubinsteinEuropeanOption@@QAEXXZ</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>CoxRossRubinsteinEuropeanOption.cpp</FILENAME>
+      <LINE>257</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).</DESCRIPTION>
+    <FUNCTION>CoxRossRubinsteinEuropeanOption::displayTree</FUNCTION>
+    <DECORATED>?displayTree@CoxRossRubinsteinEuropeanOption@@QAEXXZ</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

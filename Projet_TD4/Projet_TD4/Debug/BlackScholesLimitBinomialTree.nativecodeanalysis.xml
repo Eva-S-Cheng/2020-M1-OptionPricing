@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>6</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BlackScholesLimitBinomialTree::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::{ctor}</FUNCTION>
+    <DECORATED>??0BlackScholesLimitBinomialTree@@QAE@XZ</DECORATED>
+    <FUNCLINE>6</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BlackScholesLimitBinomialTree::_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>13</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'BSOpType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::{ctor}</FUNCTION>
+    <DECORATED>??0BlackScholesLimitBinomialTree@@QAE@NNNNNHW4BSOpType@@@Z</DECORATED>
+    <FUNCLINE>13</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>173</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6282</DEFECTCODE>
+    <DESCRIPTION>Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::getU</FUNCTION>
+    <DECORATED>?getU@BlackScholesLimitBinomialTree@@QAENXZ</DECORATED>
+    <FUNCLINE>171</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>180</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6282</DEFECTCODE>
+    <DESCRIPTION>Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::getD</FUNCTION>
+    <DECORATED>?getD@BlackScholesLimitBinomialTree@@QAENXZ</DECORATED>
+    <FUNCLINE>178</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>187</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6282</DEFECTCODE>
+    <DESCRIPTION>Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::getP</FUNCTION>
+    <DECORATED>?getP@BlackScholesLimitBinomialTree@@QAENXZ</DECORATED>
+    <FUNCLINE>185</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>194</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6282</DEFECTCODE>
+    <DESCRIPTION>Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::getQ</FUNCTION>
+    <DECORATED>?getQ@BlackScholesLimitBinomialTree@@QAENXZ</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholesLimitBinomialTree.cpp</FILENAME>
+      <LINE>201</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>6282</DEFECTCODE>
+    <DESCRIPTION>Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.</DESCRIPTION>
+    <FUNCTION>BlackScholesLimitBinomialTree::getDeltaTime</FUNCTION>
+    <DECORATED>?getDeltaTime@BlackScholesLimitBinomialTree@@QAENXZ</DECORATED>
+    <FUNCLINE>199</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

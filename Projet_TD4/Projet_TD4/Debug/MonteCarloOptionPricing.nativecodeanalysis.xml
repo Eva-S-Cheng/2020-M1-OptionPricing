@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MonteCarloOptionPricing.cpp</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'MonteCarloOptionPricing::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>MonteCarloOptionPricing::{ctor}</FUNCTION>
+    <DECORATED>??0MonteCarloOptionPricing@@IAE@XZ</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MonteCarloOptionPricing::_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MonteCarloOptionPricing.cpp</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'opType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>MonteCarloOptionPricing::{ctor}</FUNCTION>
+    <DECORATED>??0MonteCarloOptionPricing@@IAE@NNNNNHHW4opType@@@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MonteCarloOptionPricing.cpp</FILENAME>
+      <LINE>279</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).</DESCRIPTION>
+    <FUNCTION>AsianMonteCarloPricing::createSi_t</FUNCTION>
+    <DECORATED>?createSi_t@AsianMonteCarloPricing@@EAEXXZ</DECORATED>
+    <FUNCLINE>266</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>MonteCarloOptionPricing.cpp</FILENAME>
+      <LINE>278</LINE>
+      <COLUMN>80</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).</DESCRIPTION>
+    <FUNCTION>AsianMonteCarloPricing::createSi_t</FUNCTION>
+    <DECORATED>?createSi_t@AsianMonteCarloPricing@@EAEXXZ</DECORATED>
+    <FUNCLINE>266</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

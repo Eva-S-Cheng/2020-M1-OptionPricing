@@ -1,10 +1,12 @@
 #include "AmericanOptionBinLattice.h"
 
+// Default constructor
 AmericanOptionBinLattice::AmericanOptionBinLattice()
 {
 	_n = 1;
 }
 
+// Constructor with parameters 
 AmericanOptionBinLattice::AmericanOptionBinLattice(double time, int n, double volatility, double riskFreeRate, double strike, double underlyingPrice, AmOPType type)
 {
 	_time = time;
@@ -16,11 +18,13 @@ AmericanOptionBinLattice::AmericanOptionBinLattice(double time, int n, double vo
 	_type = type;
 }
 
+// Destructor
 AmericanOptionBinLattice::~AmericanOptionBinLattice()
 {
 	//
 }
 
+/* GETTERS */
 double AmericanOptionBinLattice::getU()
 {
 	if (_u == 0)
@@ -78,6 +82,7 @@ bool AmericanOptionBinLattice::getWhetherExercised(int n, int i)
 	return _exercised.getNode(n, i);
 }
 
+/* DISPLAY THE TREES */
 void AmericanOptionBinLattice::displayIntrinsicPayOff()
 {
 	std::cout << std::endl;
@@ -94,6 +99,7 @@ void AmericanOptionBinLattice::displaypayOff()
 	_payOff.stylishDisplay();
 }
 
+/* MATHEMATICAL FUNCTIONS */
 double AmericanOptionBinLattice::power(double a, int n)
 {
 	if (n <= 0) {
@@ -109,6 +115,7 @@ double AmericanOptionBinLattice::max(double a, double b)
 	return b;
 }
 
+// Computing u as always
 void AmericanOptionBinLattice::computeU()
 {
 	if (_deltaTime == 0)
@@ -116,6 +123,7 @@ void AmericanOptionBinLattice::computeU()
 	_u = exp(_volatility * sqrt(_deltaTime));
 }
 
+// Same for d
 void AmericanOptionBinLattice::computeD()
 {
 	if (_u == 0)
@@ -123,6 +131,7 @@ void AmericanOptionBinLattice::computeD()
 	_d = 1 / _u;
 }
 
+// Same for p
 void AmericanOptionBinLattice::computeP()
 {
 	if (_u == _d) {
@@ -135,6 +144,7 @@ void AmericanOptionBinLattice::computeP()
 		_p = (exp(_riskFreeRate * _deltaTime) - _d) / (_u - _d);
 }
 
+// Same for q
 void AmericanOptionBinLattice::computeQ()
 {
 	if (_p == 0)
@@ -147,6 +157,7 @@ void AmericanOptionBinLattice::computeDeltaTime()
 	_deltaTime = _time/_n;
 }
 
+// Computes the price of the option if the price has gone up i times
 double AmericanOptionBinLattice::S_Ni(int i, int n)
 {
 	if (_u == 0)
@@ -156,6 +167,7 @@ double AmericanOptionBinLattice::S_Ni(int i, int n)
 	return _underlyingPrice * power(_u, i) * power(_d, n - i);
 }
 
+// Creating the tree with the same pay of as the european 
 void AmericanOptionBinLattice::createIntrinsicPayOff()
 {
 	_intrinsicPayOff.setN(_n, 0.0);
@@ -172,21 +184,29 @@ void AmericanOptionBinLattice::createIntrinsicPayOff()
 
 }
 
+// Creates the BinLattice for the payOff
 void AmericanOptionBinLattice::createPayOff()
 {
+	// Creates the payOff 
 	createIntrinsicPayOff();
+	// Creating the real pay off 
 	_payOff.setN(_n, 0.0);
+	// creating the boolean bin lattice
 	_exercised.setN(_n, false);
 	for (int i = 0; i <= _n; i++)
 	{
+		// The last row is automatially the intrinsic pay off
 		_payOff.setNode(_n, i, _intrinsicPayOff.getNode(_n, i));
 	}
 	for (int i = _n - 1; i >= 0; i--)
 	{
 		for (int j = 0; j <= i; j++)
 		{
+			// If the american option is higher than the classical pay off
 			if (_intrinsicPayOff.getNode(i, j) <= (_p * _payOff.getNode(i + 1, j + 1) + _q * _payOff.getNode(i + 1, j)) / (1.0 + _riskFreeRate))
+				// Should be exercised
 				_exercised.setNode(i, j, true);
+			// Putting the max value
 			_payOff.setNode(i, j, max(_intrinsicPayOff.getNode(i, j), (_p * _payOff.getNode(i + 1, j + 1) + _q * _payOff.getNode(i + 1, j))/(1.0 + _riskFreeRate)));
 		}
 	}
@@ -209,13 +229,14 @@ void AmericanOptionBinLattice::displayBool() {
 				binaryTree.setNode(i, j, 111);
 		}
 	}
-
+	// Displays
 	binaryTree.stylishDisplay();
 }
 
 
 void AmericanOptionBinLattice::computePrice()
 {
+	// Computes the parameters 
 	if (_u == 0)
 		computeU();
 	if (_d == 0)
@@ -226,7 +247,9 @@ void AmericanOptionBinLattice::computePrice()
 		computeQ();
 	if (_deltaTime == 0)
 		computeDeltaTime();
+	// Creates the payoff
 	createPayOff();
+	// Computes the price
 	_opPrice = _payOff.getNode(0, 0);
 }
 

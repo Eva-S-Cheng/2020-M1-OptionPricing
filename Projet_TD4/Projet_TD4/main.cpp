@@ -1237,6 +1237,7 @@ void run_TD7() {
 			}
 		} while (!validChoice);
 
+		int m;
 		switch (choice)
 		{
 		case 1:
@@ -1246,7 +1247,6 @@ void run_TD7() {
 			MCOptionVector.push_back(new EuropeanMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, periods, CallOP));
 			break;
 		case 3:
-			int m;
 			do
 			{
 				std::cout << "How many steps would you like to consider ?" << std::endl;
@@ -1266,7 +1266,6 @@ void run_TD7() {
 			MCOptionVector.push_back(new AsianMonteCarloPricing(riskFreeRate, maturity, strikePrice, underlyingPrice, volatility, m, periods, CallOP));
 			break;
 		case 4:
-			int m;
 			do
 			{
 				std::cout << "How many steps would you like to consider ?" << std::endl;
@@ -1658,6 +1657,8 @@ void run_TD8_ComparingTreeAndMonteCarlo() {
 		default:
 			break;
 		}
+
+
 	}
 }
 

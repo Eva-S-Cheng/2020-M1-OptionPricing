@@ -2,6 +2,32 @@
 #include <cmath>
 #include <iostream>
 
+// Default constructor
+BlackScholesLimitBinomialTree::BlackScholesLimitBinomialTree()
+{
+	_n = 1;
+	_maturity = 0.0;
+}
+
+// Constructor with parameters 
+BlackScholesLimitBinomialTree::BlackScholesLimitBinomialTree(double riskFreeRate, double maturity, double strike, double underlyingPrice, double volatility, int n, BSOpType type)
+{
+	_riskFreeRate = riskFreeRate;
+	_maturity = maturity;
+	_strike = strike;
+	_underlyingPrice = underlyingPrice;
+	_n = n;
+	_type = type;
+	_volatility = volatility;
+}
+
+// Destructor 
+BlackScholesLimitBinomialTree::~BlackScholesLimitBinomialTree()
+{
+	//
+}
+
+/* CLASSICAL COMPUTING U, D, P, Q */
 void BlackScholesLimitBinomialTree::computeU()
 {
 	if (_deltaTime == 0)
@@ -40,6 +66,7 @@ void BlackScholesLimitBinomialTree::computeQ()
 	std::cout << _q << std::endl;
 }
 
+// Computing R
 void BlackScholesLimitBinomialTree::computeR()
 {
 	if (_deltaTime == 0)
@@ -53,8 +80,10 @@ void BlackScholesLimitBinomialTree::computeDeltaTime()
 	_deltaTime = _maturity / _n;
 }
 
+// Computing the price 
 void BlackScholesLimitBinomialTree::computePrice()
 {
+	// Computing all the parameters if they are not computed 
 	if (_u == 0)
 		computeU();
 	if (_d == 0)
@@ -65,7 +94,6 @@ void BlackScholesLimitBinomialTree::computePrice()
 		computeQ();
 	if (_r == 0)
 		computeR();
-
 	if (_n == 0)
 	{
 		_n = 1;
@@ -80,26 +108,11 @@ void BlackScholesLimitBinomialTree::computePrice()
 			* power(_q, _n - i)
 			* payOff(i);
 	}
+	// Computing the price of the option 
 	_optionPrice = _optionPrice / power((1 + _r), _n);
 }
 
-BlackScholesLimitBinomialTree::BlackScholesLimitBinomialTree()
-{
-	_n = 1;
-	_maturity = 0.0;
-}
-
-BlackScholesLimitBinomialTree::BlackScholesLimitBinomialTree(double riskFreeRate, double maturity, double strike, double underlyingPrice, double volatility, int n, BSOpType type)
-{
-	_riskFreeRate = riskFreeRate;
-	_maturity = maturity;
-	_strike = strike;
-	_underlyingPrice = underlyingPrice;
-	_n = n;
-	_type = type;
-	_volatility = volatility;
-}
-
+/* MATHEMATIC FUNCTIONS */
 double BlackScholesLimitBinomialTree::power(double a, int n)
 {
 	if (n <= 0) {
@@ -124,8 +137,10 @@ double BlackScholesLimitBinomialTree::max(double a, double b)
 	return b;
 }
 
+// Computing the SN_i 
 double BlackScholesLimitBinomialTree::S_Ni(int i)
 {
+	// Compute every parameters if not computed
 	if (_u == _d) {
 		computeU();
 		computeD();
@@ -133,11 +148,13 @@ double BlackScholesLimitBinomialTree::S_Ni(int i)
 		computeP();
 		computeQ();
 	}
+	// Return S0u^id^(n-i)
 	return _underlyingPrice * power(_u, i) * power(_d, _n - i);
 }
 
 double BlackScholesLimitBinomialTree::payOff(int i)
 {
+	// Return the payoff
 	if (_u == _d) {
 		computeU();
 		computeD();
@@ -150,6 +167,7 @@ double BlackScholesLimitBinomialTree::payOff(int i)
 	return max(_strike - S_Ni(i), 0.0);
 }
 
+/* GETTERS */
 double BlackScholesLimitBinomialTree::getU()
 {
 	if (_u = 0)

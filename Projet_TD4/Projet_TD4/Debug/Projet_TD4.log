@@ -1,29 +1,82 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: Le répertoire intermédiaire (Debug\) contient des fichiers partagés provenant d'un autre projet (Projet_TD4.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
-  main.cpp
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.h(16,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.h(15,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(424,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(613,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(645,38): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(651,30): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
+  AmericanOptionBinLattice.cpp
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(79,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(75): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::stylishDisplay(void)'
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(658): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::stylishDisplay(void)' en cours de compilation
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(643): message : voir la référence à l'instanciation classe modèle 'BinLattice<int>' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(233): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::stylishDisplay(void)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(216): message : voir la référence à l'instanciation classe modèle 'BinLattice<int>' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(81,2): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(83,17): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(119,2): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(28,23): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(27): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::setNode(int,int,T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(229): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::setNode(int,int,T)' en cours de compilation
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(30,29): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(35,23): warning C4018: '<=' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(34): message : pendant la compilation de la fonction membre classe modèle 'T BinLattice<T>::getNode(int,int)'
+          with
+          [
+              T=bool
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(82): message : voir la référence à l'instanciation de la fonction modèle 'T BinLattice<T>::getNode(int,int)' en cours de compilation
+          with
+          [
+              T=bool
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.h(28): message : voir la référence à l'instanciation classe modèle 'BinLattice<bool>' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(39,29): warning C4018: '<=' : incompatibilité signed/unsigned
+  BinLattice.cpp
+  BinomialTree.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinomialTree.cpp(14,27): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinomialTree.cpp(108,22): warning C4018: '<' : incompatibilité signed/unsigned
+  BlackScholesLimitBinomialTree.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.h(18,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  BlackScholes_Model.cpp
+  CRRPricer_ClosedMethod.cpp
+  CoxRossRubinsteinEuropeanOption.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(14,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(141,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(149,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(166,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(170,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(225,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(242,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(247,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(248,24): warning C4018: '<' : incompatibilité signed/unsigned
+  main.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.h(18,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.h(19,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(425,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(615,20): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(647,38): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(653,30): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(1467,49): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(1474,50): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(79,2): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(75): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::stylishDisplay(void)'
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(660): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::stylishDisplay(void)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(645): message : voir la référence à l'instanciation classe modèle 'BinLattice<int>' en cours de compilation
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(81,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(83,17): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(119,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(49,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(46): message : pendant la compilation de la fonction membre classe modèle 'void BinLattice<int>::display(void)'
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(656): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::display(void)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(658): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::display(void)' en cours de compilation
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(51,2): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(53,17): warning C4018: '<' : incompatibilité signed/unsigned
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(60,2): warning C4018: '<' : incompatibilité signed/unsigned
@@ -34,7 +87,7 @@ C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLatt
           [
               T=int
           ]
-C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(651): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::setNode(int,int,T)' en cours de compilation
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(653): message : voir la référence à l'instanciation de la fonction modèle 'void BinLattice<int>::setNode(int,int,T)' en cours de compilation
           with
           [
               T=int
@@ -52,4 +105,62 @@ C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLatt
               T=int
           ]
 C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(39,29): warning C4018: '<=' : incompatibilité signed/unsigned
+  MethodComparerMonteCarloVSTree.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.h(18,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.h(19,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  MonteCarloOptionPricing.cpp
+  MonteCarlo_NormalLaw.cpp
+  mt19937_singleton.cpp
+  Node.cpp
+  Option.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Option.cpp(9,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Option.cpp(15,10): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+  RandomWalk.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\RandomWalk.cpp(72,13): warning C4101: 'error' : variable locale non référencée
+  RandomWalkGenerator.cpp
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\RandomWalkGenerator.cpp(39,13): warning C4101: 'error' : variable locale non référencée
+  Compilation en cours...
+  Génération de code en cours...
   Projet_TD4.vcxproj -> C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Debug\Projet_cpp.exe
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(4): warning C26495: La variable 'AmericanOptionBinLattice::_time' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BinLattice.h(196): warning C26495: La variable 'BinLattice<double>::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\AmericanOptionBinLattice.cpp(10): warning C26812: Le type enum 'AmOPType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(6): warning C26495: La variable 'BlackScholesLimitBinomialTree::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(13): warning C26812: Le type enum 'BSOpType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(173): warning C6282: Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(180): warning C6282: Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(187): warning C6282: Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(194): warning C6282: Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholesLimitBinomialTree.cpp(201): warning C6282: Opérateur incorrect : attribution d'une constante dans un contexte Boolean. Utilisez '==' à la place.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholes_Model.cpp(7): warning C26495: La variable 'BlackScholes_Model::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholes_Model.cpp(16): warning C26812: Le type enum 'Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholes_Model.cpp(74): warning C6001: Utilisation de la mémoire non initialisée 'delta'.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\BlackScholes_Model.cpp(132): warning C6001: Utilisation de la mémoire non initialisée 'price'.
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CRRPricer_ClosedMethod.cpp(6): warning C26495: La variable 'CRRPricer_ClosedMethod::_riskFreeRate' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CRRPricer_ClosedMethod.cpp(12): warning C26812: Le type enum 'optionName’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(6): warning C26495: La variable 'CoxRossRubinsteinEuropeanOption::_n' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(12): warning C26812: Le type enum 'option_Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(228): warning C26451: Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(229): warning C26451: Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\CoxRossRubinsteinEuropeanOption.cpp(257): warning C26451: Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(117): warning C26812: Le type enum 'Distribution’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(278): warning C26812: Le type enum 'Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(472): warning C26812: Le type enum 'option_Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(694): warning C26812: Le type enum 'optionName’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(1484): warning C26812: Le type enum 'AmOPType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\main.cpp(1663): warning C26812: Le type enum 'comparerOP’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.cpp(4): warning C26495: La variable 'MethodComparerMonteCarloVSTree::_maturity' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.cpp(9): warning C26812: Le type enum 'comparerOP’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MethodComparerMonteCarloVSTree.cpp(27): warning C26812: Le type enum 'opType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MonteCarloOptionPricing.cpp(16): warning C26495: La variable 'MonteCarloOptionPricing::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MonteCarloOptionPricing.cpp(28): warning C26812: Le type enum 'opType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MonteCarloOptionPricing.cpp(279): warning C26451: Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MonteCarloOptionPricing.cpp(278): warning C26451: Dépassement arithmétique : utilisation de l'opérateur '+' sur une valeur de 4 octets, puis cast du résultat vers une valeur de 8 octets. Castez la valeur vers le type plus large avant d'appeler l'opérateur '+' pour évider un dépassement (io.2).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\MonteCarlo_NormalLaw.cpp(3): warning C26495: La variable 'MonteCarlo_NormalLaw::_currentEstimate' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Node.cpp(5): warning C26495: La variable 'Node::_childUp' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Node.cpp(14): warning C26495: La variable 'Node::_childUp' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Option.cpp(6): warning C26495: La variable 'Option::_optionPrice' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\Option.cpp(13): warning C26495: La variable 'Option::_optionPrice' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\RandomWalk.cpp(4): warning C26495: La variable 'RandomWalk::_distribution' n'est pas initialisée. Initialisez toujours une variable membre (type.6).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\RandomWalk.cpp(10): warning C26812: Le type enum 'Distribution’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).
+C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\RandomWalkGenerator.cpp(15): warning C26812: Le type enum 'Distribution’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).

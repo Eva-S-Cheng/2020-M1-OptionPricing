@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholes_Model.cpp</FILENAME>
+      <LINE>7</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'BlackScholes_Model::_type' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>BlackScholes_Model::{ctor}</FUNCTION>
+    <DECORATED>??0BlackScholes_Model@@QAE@XZ</DECORATED>
+    <FUNCLINE>7</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>BlackScholes_Model::_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholes_Model.cpp</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Le type enum 'Type’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3).</DESCRIPTION>
+    <FUNCTION>BlackScholes_Model::{ctor}</FUNCTION>
+    <DECORATED>??0BlackScholes_Model@@QAE@W4Type@@NNNNNH@Z</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholes_Model.cpp</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Utilisation de la mémoire non initialisée 'delta'.</DESCRIPTION>
+    <FUNCTION>BlackScholes_Model::computeDelta</FUNCTION>
+    <DECORATED>?computeDelta@BlackScholes_Model@@AAEXXZ</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>59</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>déclaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'delta' n'est pas initialisé</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>61</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>créer une branche</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Le commutateur Assume ( '_method' ) se traduit par le cas par défaut</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>71</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>créer une branche</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Le commutateur Assume ( '_type' ) se traduit par case Call: </MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>73</LINE>
+        <COLUMN>1</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>74</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>74</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>utilisation</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'delta' est utilisé, mais n'a peut-être pas été initialisé</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+      <FILENAME>BlackScholes_Model.cpp</FILENAME>
+      <LINE>132</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Utilisation de la mémoire non initialisée 'price'.</DESCRIPTION>
+    <FUNCTION>BlackScholes_Model::computePrice</FUNCTION>
+    <DECORATED>?computePrice@BlackScholes_Model@@AAEXXZ</DECORATED>
+    <FUNCLINE>110</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>119</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>déclaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'price' n'est pas initialisé</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>111</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>117</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>créer une branche</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Le commutateur Assume ( '_type' ) se traduit par case Call: </MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>120</LINE>
+        <COLUMN>1</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>121</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>créer une branche</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Le commutateur Assume ( '_method' ) se traduit par le cas par défaut</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>129</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>132</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\33652\Desktop\Projet_ccp\ProjetCPPFinance\Projet_TD4\Projet_TD4\</FILEPATH>
+        <FILENAME>BlackScholes_Model.cpp</FILENAME>
+        <LINE>132</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>utilisation</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'price' est utilisé, mais n'a peut-être pas été initialisé</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>
